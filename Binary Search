@@ -1,0 +1,29 @@
+#iterative code for binary search
+arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']
+def BinarySearch(value):
+    LB=0
+    UB=len(arr) - 1
+
+    while LB <= UB:
+        mid = (LB+UB)//2
+        if arr[mid] == value:
+            return mid
+        elif arr[mid] < value:
+            LB = mid+1
+        else:
+            UB = mid -1
+    return -1
+
+#main program
+choice = 0
+while choice!= 2:
+    print()
+    print("1. Search a value: ")
+    print("2. Exit ")
+    choice = int(input("Enter choice: "))
+    if choice == 1:
+        value = input("Enter value to search for: ")
+        print(BinarySearch(value))
+    elif choice == 2:
+        print("exiting...")
+
