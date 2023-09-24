@@ -1,0 +1,27 @@
+arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']
+LB = 0
+UB = len(arr)-1
+
+def BinarySearchR(LB,UB,Value):
+    Mid = (LB+UB)//2
+    if arr[Mid] == Value:
+        return Mid
+    elif LB > UB:
+        return -1
+    elif arr[Mid] < Value:
+        return BinarySearchR(Mid+1,UB,Value)
+    else:
+        return BinarySearchR(LB,Mid-1,Value)
+
+#main program
+choice = 0
+while choice!= 2:
+    print()
+    print("1. Search a value: ")
+    print("2. Exit ")
+    choice = int(input("Enter choice: "))
+    if choice == 1:
+        Value = input("Enter value to search for: ")
+        print(BinarySearchR(LB,UB,Value))
+    elif choice == 2:
+        print("exiting...")
