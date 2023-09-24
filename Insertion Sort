@@ -1,0 +1,35 @@
+
+arr = [4,3,2,10,12,1,5,6]
+
+#Insertion sort in ascending order
+def insertionSortAsc():
+    for BlueP in range(1,len(arr)):
+        value = arr[BlueP]
+        BlackP = BlueP-1
+        while arr[BlackP] > value and BlackP >= 0:
+            arr[BlackP +1] = arr[BlackP]
+            BlackP -=1
+        arr[BlackP +1] = value
+
+#Insertion sort in descending order
+def insertionSortDes():
+    for BlueP in range(1, len(arr)):
+        value = arr[BlueP]
+        BlackP = BlueP - 1
+        while arr[BlackP] < value and BlackP >= 0:
+            arr[BlackP + 1] = arr[BlackP]
+            BlackP -= 1
+        arr[BlackP + 1] = value
+
+#main program
+print("1. For sorting array in ascending order")
+print("2. For sorting array in descending order")
+choice = int(input("Enter choice:"))
+if choice == 1:
+    print("Before sorting: ", arr)
+    insertionSortAsc()
+    print("After sorting: ", arr)
+elif choice == 2:
+    print("Before sorting: ", arr)
+    insertionSortDes()
+    print("After sorting: ", arr)
